@@ -1,10 +1,9 @@
 from os import path
-from taskhandler import create_list, new_task, show_list, delete_entry, edit_entry
+from taskhandler import create_list, new_task, show_list, delete_entry, edit_entry, kill_all
 import sys
 
 # variables
 version = "aplha 0.1"
-
 # pre-startup checks
 # check if tasks.txt exists, if not --> create
 if not path.exists("tasks.txt"):
@@ -34,6 +33,7 @@ while todo_selection != '5':
     print("[3] Delete a task")
     print("[4] Edit a task")
     print("[5] Exit Program")
+    print("[6] Delete all my tasks")
     todo_selection = input("\nSelection: ")
 
 # if statement, running different modules from taskhandler.py
@@ -57,6 +57,10 @@ while todo_selection != '5':
     elif todo_selection == '5':
         print("Good Bye!")
         exit()
+
+# 6 - Delete tasks.edit_txt
+    elif todo_selection == '6':
+        kill_all()
 
     else:
         print("\nThis is not a valid option! Please try again!\n")

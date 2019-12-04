@@ -1,3 +1,5 @@
+from os import path
+import os
 
 # open a list (array)
 todo_list = []
@@ -82,4 +84,12 @@ def edit_entry():
         # end of write to file ------------
     except:
         print("\nThis is not a valid entry! Please try again!\n")
+        pass
+
+def kill_all():
+    if path.exists("tasks.txt"):
+        os.remove("tasks.txt")
+        print("File deleted!")
+    else:
+        print("No file found!")
         pass
